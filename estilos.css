@@ -1,0 +1,1670 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+
+/* Aquí comienzan las demás reglas CSS */
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Altura igual al viewport */
+  background: url('./car.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  color: #333; /* Color de texto general */
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: white;
+  font-weight: 700; /* Usar negrita para los títulos */
+}
+
+.card-form {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 15px auto;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-form label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: -10px;
+}
+
+.card-form input,
+.card-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif; /* Asegurar que los inputs usen Roboto */
+}
+
+.card-form input:focus,
+.card-form select:focus {
+  outline: none;
+  border-color: #723737;
+}
+
+.card-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Roboto', sans-serif; /* Asegurar que los botones usen Roboto */
+}
+
+.card-form .pepe {
+  background-color: #854949;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.card-form .pepe:hover {
+  background-color: #502626;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif; /* Asegurar que las tablas usen Roboto */
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: flex-start; /* Cambiar la alineación si es necesario */
+  margin-bottom: 10px;
+}
+
+.tab-button {
+  padding: 20px 15px;
+  color: #000; /* Texto negro */
+  background-color: #ffffff; /* Fondo blanco */
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px 10px 0 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  text-decoration: none; /* Eliminar subrayado del texto */
+  margin-right: 5px; /* Separar las pestañas horizontalmente */
+  font-family: 'Roboto', sans-serif; /* Asegurar que las pestañas usen Roboto */
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active-tab {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .card-form {
+    max-width: 95%; /* Reduce el ancho en pantallas pequeñas */
+    padding: 10px;
+  }
+
+  table {
+    width: 95%;
+  }
+}
+
+/* Estilo para los detalles del precio */
+.precio-detalles {
+  background-color: #f7f8fa;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+  /* Importar la fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Altura igual al viewport */
+  background: url('./car.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  color: #333; /* Color de texto general */
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: white;
+  font-weight: 700; /* Usar negrita para los títulos */
+}
+
+.precio-detalles p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.precio-detalles ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.precio-detalles li {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.precio-detalles strong {
+  font-weight: bold;
+}
+
+/* Estilos para la sección de pago */
+.pago-datos {
+  padding: 16px; /* Espaciado interno más amplio */
+  border-radius: 8px; /* Bordes redondeados más grandes */
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más destacada */
+  max-width: 600px; /* Ancho máximo aumentado */
+  margin: 20px auto; /* Centrado horizontal */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.pago-datos label {
+  display: block;
+  margin: 8px 0; /* Espaciado más amplio */
+  font-weight: bold;
+  font-size: 14px; /* Fuente más grande */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.pago-datos input {
+  width: calc(100% - 24px); /* Ajustar ancho */
+  padding: 10px; /* Espaciado interno mayor */
+  margin-bottom: 12px; /* Espaciado entre inputs */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes redondeados más grandes */
+  font-size: 14px; /* Fuente más grande */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  box-sizing: border-box;
+}
+
+.pago-datos button {
+  padding: 12px; /* Espaciado interno mayor */
+  background-color: #7a3b3b;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Bordes redondeados más grandes */
+  cursor: pointer;
+  font-size: 16px; /* Tamaño de fuente mayor */
+  width: 100%; /* Botón ocupa todo el ancho */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.pago-resumen {
+  background-color: #f7f8fa;
+  padding: 16px; /* Espaciado interno mayor */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más destacada */
+  max-width: 600px; /* Ancho máximo aumentado */
+  margin: 20px auto; /* Centrado horizontal */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.pago-resumen ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pago-resumen li {
+  font-size: 14px; /* Fuente más grande */
+  color: #555;
+  margin-bottom: 8px; /* Espaciado mayor */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.pago-resumen img.klarna-logo {
+  width: 80px; /* Aumentar tamaño del logo */
+  margin: 10px 0;
+}
+
+.pago-resumen button {
+  width: 100%;
+  padding: 12px; /* Espaciado interno mayor */
+  background-color: #202020;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Bordes redondeados más grandes */
+  font-size: 16px; /* Fuente más grande */
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.pago-resumen button:hover {
+  background-color: #502626;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .pago-datos,
+  .pago-resumen {
+    max-width: 95%; /* Ocupa casi todo el ancho disponible */
+    margin: 16px auto; /* Reducir margen */
+    padding: 12px; /* Reducir padding interno */
+  }
+
+  .pago-datos label,
+  .pago-resumen li {
+    font-size: 12px; /* Ajustar fuente en pantallas pequeñas */
+    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  }
+
+  .pago-datos input {
+    font-size: 12px; /* Ajustar tamaño de texto */
+    padding: 8px; /* Reducir padding */
+  }
+
+  .pago-datos button,
+  .pago-resumen button {
+    font-size: 14px; /* Botones más grandes */
+    padding: 10px; /* Reducir padding */
+  }
+
+  .pago-resumen img.klarna-logo {
+    width: 70px; /* Ajustar tamaño del logo */
+  }
+}
+
+/* Estilos para la sección de documentos */
+#documentos {
+  background-color: #f7f8fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+#documentos h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+#documentos p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #555;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+#documentos ul {
+  list-style-type: disc;
+  margin-left: 25px;
+}
+
+#documentos ul li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.drop-area {
+  border: 2px dashed #7a3b3b;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.drop-area:hover {
+  background-color: #f0e6e6;
+}
+
+/* Ocultar el input de archivos */
+#fileInput {
+  display: none;
+}
+
+/* Barra de progreso */
+#progressContainer {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#progressBar {
+  width: 0%;
+  height: 5px;
+  background-color: green;
+  transition: width 0.4s ease;
+}
+
+/* Lista de archivos subidos */
+#fileList {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#fileList li {
+  background-color: #f7f7f7;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+#fileList li span {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Botón eliminar archivo */
+.delete-file {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.delete-file:hover {
+  color: darkred;
+}
+
+/* Opciones de documentos */
+.documento-opciones {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Importar la fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Altura igual al viewport */
+  background: url('./car.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  color: #333; /* Color de texto general */
+}
+
+/* Estilos para las opciones de documentos */
+.documento-opciones button {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #7a3b3b;
+  color: white;
+  flex: 1;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.documento-opciones button:hover {
+  background-color: #5a2929;
+}
+
+.documento-opciones .btn-mas-tarde {
+  background-color: #7a3b3b;
+}
+
+.documento-opciones .btn-mas-tarde:hover {
+  background-color: #361414;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  #documentos {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  #documentos h2 {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  }
+
+  #documentos p,
+  #documentos ul li {
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  }
+
+  .drop-area {
+    padding: 15px;
+  }
+
+  .documento-opciones button {
+    font-size: 13px;
+    padding: 8px;
+    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  }
+}
+
+/* Contenedor general para la tarjeta en el costado de la pantalla */
+.card-table {
+  position: fixed; /* Fijar la tarjeta en el costado */
+  top: 50%; /* Centrar verticalmente */
+  left: -10px; /* Ubicar a la izquierda (puedes cambiarlo a right si lo deseas a la derecha) */
+  transform: translateY(-50%); /* Ajustar para que esté centrado en el medio */
+  width: 250px; /* Hacer la tarjeta más pequeña */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  padding: 10px; /* Reducir padding */
+  z-index: 1000; /* Asegurar que esté encima de otros elementos */
+  font-family: 'Roboto', sans-serif; /* Cambiar la fuente a Roboto */
+  transition: left 0.3s ease-in-out; /* Animación para el desplazamiento */
+}
+
+/* Título de la tarjeta */
+.card-table h2 {
+  text-align: center;
+  margin-bottom: 6px; /* Espacio reducido */
+  font-size: 10px; /* Reducir aún más el tamaño del texto */
+  color: #333;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Tabla dentro de la tarjeta */
+#tablaVehiculos {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  border-collapse: collapse; /* Eliminar espacios entre celdas */
+  font-size: 8px; /* Reducir aún más tamaño de fuente */
+  margin-top: 4px; /* Separación de la tabla respecto al título */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Estilo para las celdas de la tabla */
+#tablaVehiculos th,
+#tablaVehiculos td {
+  padding: 3px; /* Reducir más el padding */
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 7px; /* Reducir aún más tamaño de la fuente en las celdas */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Estilo para los botones */
+.card-table button {
+  font-size: 8px; /* Reducir tamaño de los botones */
+  padding: 4px; /* Reducir padding en botones */
+  width: 100%; /* Botones más anchos */
+  margin-top: 4px; /* Espacio superior */
+  background-color: #723737; /* Color de fondo del botón */
+  color: white; /* Color de texto del botón */
+  border: none; /* Sin bordes */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor en forma de mano */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Estilo para los botones al pasar el mouse */
+.card-table button:hover {
+  background-color: #502626; /* Cambio de color en hover */
+}
+
+/* Clase para animación horizontal de la tarjeta */
+.card-table.move-right {
+  left: 80%; /* Mover a la derecha de la pantalla */
+}
+
+/* Ajustar el color al hacer hover en los días del calendario */
+.flatpickr-day:hover,
+.flatpickr-day.selected:hover,
+.flatpickr-day.today:hover {
+  background: #723737; /* Color más oscuro al hacer hover */
+  color: white; /* Texto blanco para contraste */
+  border-radius: 50%; /* Mantener forma circular */
+}
+
+/* Ajustar hover para los botones de navegación */
+.flatpickr-prev-month:hover,
+.flatpickr-next-month:hover {
+  background: #723737; /* Fondo consistente con el día seleccionado */
+  color: white; /* Texto blanco */
+  border-radius: 50%; /* Mantener bordes redondeados */
+}
+
+/* Responsividad para hover en pantallas pequeñas */
+@media (max-width: 600px) {
+  .flatpickr-day:hover,
+  .flatpickr-day.selected:hover,
+  .flatpickr-day.today:hover {
+    background: #723737; /* Color más oscuro en pantallas pequeñas */
+  }
+
+  .flatpickr-prev-month:hover,
+  .flatpickr-next-month:hover {
+    background: #723737; /* Consistencia para botones de navegación */
+  }
+}
+
+/* Inputs generales */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Asegura que el padding y border no afecten el ancho */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Cambiar color del borde al enfocar */
+input:focus {
+  border-color: #723737;
+  outline: none;
+}
+
+/* Estilo de la lista de autocompletado */
+.ui-autocomplete {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+/* Estilo de las sugerencias individuales */
+.ui-menu-item {
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Color de fondo para la opción activa */
+.ui-state-active {
+  background-color: #723737 !important;
+  color: white !important;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .card {
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    font-size: 12px;
+    padding: 6px;
+    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  }
+}
+
+/* Posicionar la sección informativa a la derecha y más abajo */
+.info-section {
+  position: absolute;
+  top: 150px; /* Ajusta esta distancia para colocarla más abajo */
+  right: 20px; /* Distancia desde el lado derecho */
+  width: 350px; /* Ancho ligeramente mayor para acomodar el contenido */
+  padding: 25px; /* Aumentar relleno para dar espacio al contenido */
+  border-radius: 8px;
+  /* Más opacidad */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  text-align: center;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Estilos del contenido */
+.info-section h2 {
+  font-size: 22px; /* Aumentar el tamaño de la fuente */
+  color: #ffffff;
+  margin-bottom: 15px; /* Ajustar margen para dar más espacio */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+/* Importar la fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333; /* Color de texto general */
+}
+
+.info-section p {
+  font-size: 16px; /* Aumentar el tamaño de la fuente */
+  color: #ffffff;
+  line-height: 1.6; /* Aumentar el interlineado para mejorar la legibilidad */
+  margin-bottom: 15px; /* Ajustar margen para separar más los elementos */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Aumentar el espacio entre los elementos */
+  margin-bottom: 20px; /* Espacio inferior para las estrellas */
+}
+
+.contact span {
+  font-size: 16px; /* Aumentar el tamaño del texto */
+  color: #555;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Botón verde para atención al cliente */
+.contact-button {
+  display: inline-block;
+  padding: 12px 25px; /* Aumentar el padding para un botón más grande */
+  font-size: 16px; /* Aumentar el tamaño de la fuente */
+  font-weight: bold;
+  color: white;
+  background-color: #28a745; /* Verde principal */
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.contact-button:hover {
+  background-color: #218838; /* Verde más oscuro al pasar el ratón */
+  transform: scale(1.05); /* Pequeño efecto de zoom */
+}
+
+.contact-button:active {
+  transform: scale(0.95); /* Efecto de clic */
+}
+
+.whatsapp-link {
+  font-size: 35px; /* Aumentar el tamaño del icono de WhatsApp */
+  color: #25d366; /* Color oficial de WhatsApp */
+  text-decoration: none;
+  transition: transform 0.2s;
+  margin-top: 20px;
+}
+
+.whatsapp-link:hover {
+  transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Estrellas de calificación */
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Espacio entre estrellas */
+}
+
+.rating i {
+  font-size: 18px; /* Aumentar el tamaño de las estrellas */
+  color: #efff15; /* Verde para las estrellas */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .info-section {
+    position: relative; /* Cambia a estático para pantallas pequeñas */
+    top: auto;
+    right: auto;
+    margin-top: 20px;
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+
+  /* Cambiar a una columna en pantallas pequeñas */
+  .contact {
+    flex-direction: column;
+    gap: 15px; /* Espaciado entre los elementos */
+  }
+}
+
+.price-section {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Estilos de la tarjeta */
+.card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.section {
+  top: 600px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.header-item i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #502626;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.feature {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 15px;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.feature i {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #723737;
+}
+
+/* Contenedor principal de precios */
+.prices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra las tarjetas */
+  gap: 20px; /* Espaciado entre tarjetas */
+  margin: 50px auto; /* Espaciado razonable antes del contenedor */
+  padding: 0 20px; /* Añade un padding lateral para móviles */
+}
+
+/* Tarjetas de precio */
+.price-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%; /* Ocupa el 100% del ancho en móviles */
+  max-width: 250px; /* Máximo ancho para evitar que se estire demasiado */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px; /* Ajusta según necesites */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.price-button {
+  background-color: #5e2c2c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: auto; /* Asegura que el botón siempre quede alineado abajo */
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.price-button:hover {
+  background-color: #4a2222;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.3), -12px -12px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Títulos de las tarjetas */
+.price-card h3 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.3em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Precio destacado */
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #723737;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Detalles de precios */
+.price-details {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.price-card .price-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.price-card .price-details ul li {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #723737;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Iconos */
+.price-card .price-details ul li i {
+  font-size: 18px;
+  color: #7a3b3b;
+}
+
+/* Botón dentro de la tarjeta */
+.price-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #7a3b3b;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.price-card button:hover {
+  background-color: #5e2c2c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Encabezado general */
+.header-background {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+  color: rgb(255, 255, 255);
+  padding: 10px 0; /* Reduce el padding vertical */
+  background-color: #0000006e;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  position: relative; /* Ajusta el comportamiento dentro del flujo */
+  margin-bottom: 30px;
+  margin-top: -20px; /* Reduce el espacio superior */
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+/* Importar la fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333; /* Color de texto general */
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+/* Encabezado principal */
+#main-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px; /* Reduce el padding general */
+  background-color: #ffffff; /* Fondo blanco */
+  color: black;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.logo img {
+  max-width: 140px; /* Tamaño compacto del logo */
+  height: auto;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: rgb(54, 18, 18);
+  padding-inline: 20px;
+  text-decoration: none;
+  font-size: 15px; /* Tamaño ligeramente mayor */
+  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-weight: 450; /* Cambiado a semibold */
+  transition: color 0.1s;
+}
+
+.nav-links a:hover {
+  color: #502626; /* Color del texto */
+  transform: scale(1.2); /* Aumenta el tamaño del texto */
+}
+
+
+/* Contenedor del botón de contacto */
+#contact-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botón de contacto */
+#contact-button {
+  background-color: #69322a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#contact-button i {
+  font-size: 18px;
+}
+
+/* Menú desplegable de contacto */
+#contact-menu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 150px;
+  z-index: 9999; /* Para superponerlo correctamente */
+}
+
+#contact-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.3s;
+}
+
+#contact-menu a:hover {
+  background-color: #f4f4f4;
+}
+
+#contact-menu a i {
+  color: #69322a;
+}
+
+
+/* Características o secciones destacadas */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 90px;
+}
+
+.feature {
+  flex: 1 1 calc(50% - 20px);
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature i {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #723737;
+}
+
+.autocomplete-list {
+  position: absolute;
+  border: 1px solid #ccc;
+  background-color: white;
+  max-height: 150px;
+  overflow-y: auto;
+  width: calc(100% - 30px);
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+}
+
+.autocomplete-list div {
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+}
+
+.autocomplete-list div:hover {
+  background-color: #f0f0f0;
+}
+
+.flecha {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  pointer-events: none; /* Evita interferir con los clics */
+}
+
+/* Contenedor de la fecha */
+.fecha-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Estilos del campo de fecha */
+.fecha-input {
+  width: calc(100% - 16px); /* Ajusta el ancho relativo */
+  padding: 10px; /* Aumenta el relleno interno */
+  padding-left: 40px; /* Espacio para el icono */
+  margin-bottom: -10px; /* Ajusta el margen inferior */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px; /* Aumenta el tamaño de fuente */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 50px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-weight: 500;
+}
+
+/* Estilo del icono de calendario */
+.fecha-icon {
+  position: absolute;
+  left: 300px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+/* Estilos para los campos de entrada */
+.card-form input {
+  width: calc(100% - 16px); /* Ajusta el ancho relativo */
+  padding: 10px; /* Aumenta el relleno interno */
+  margin-bottom: 10px; /* Ajusta el margen inferior */
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 40px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+}
+
+/* Estilo para los labels */
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  .header-background {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .header-item {
+    margin: 5px 0;
+  }
+
+  #main-navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    padding-inline: 10px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  }
+
+  .logo img {
+    max-width: 100px; /* Reduce el tamaño del logo en móviles */
+  }
+
+  .whatsapp-button {
+    padding: 8px 12px;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  }
+
+  .whatsapp-button img {
+    max-width: 20px;
+  }
+
+  .features {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  .feature {
+    flex: 1 1 100%;
+    margin: 5px 0;
+  }
+
+  .fecha-container {
+    width: 100%;
+  }
+
+  .fecha-input {
+    width: 100%;
+    padding-left: 30px;
+    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  }
+
+  .fecha-icon {
+    left: 10px;
+  }
+
+  .card-form input {
+    width: 100%;
+    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links a {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  }
+
+  .whatsapp-button {
+    padding: 6px 10px;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  }
+
+  .whatsapp-button img {
+    max-width: 18px;
+  }
+
+  .feature i {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .fecha-input {
+    font-size: 12px;
+    height: 40px;
+    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  }
+
+  .card-form input {
+    font-size: 12px;
+    height: 35px;
+    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  }
+
+  label {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  }
+}
+
+
+
+/* Importar la fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 2rem;
+  border: none;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Permite posicionar el botón de cierre */
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+/* Reducir tamaño del título */
+.modal-header h2 {
+  font-size: 1.4rem; /* Antes 1.6rem */
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.modal-header .logo {
+  width: 80px;
+  height: auto;
+}
+
+/* Posicionar la "X" de cierre en la esquina superior derecha */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #888888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.close-button:hover {
+  color: #1a1a1a;
+}
+
+/* Modal Body */
+.modal-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333333;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.modal-body h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-top: 1.2rem;
+  margin-bottom: 0.7rem;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.modal-body p {
+  margin: 0.6rem 0;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.modal-body hr {
+  border: 0;
+  height: 1px;
+  background: #e0e0e0;
+  margin: 1.2rem 0;
+}
+
+/* Modal Action Button */
+.modal-button {
+  background-color: #0070f3;
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+}
+
+.modal-button:hover {
+  background-color: #0051cc;
+  transform: translateY(-1px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1.5rem;
+    margin: 8% auto;
+  }
+
+  .modal-header h2 {
+    font-size: 1.2rem; /* Reducido aún más para móviles */
+    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  }
+
+  .modal-body {
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  }
+
+  .modal-body h3 {
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  }
+
+  /* Ajuste del botón de cierre para móviles */
+  .close-button {
+    top: 8px;
+    right: 8px;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  }
+}
+
+/* Importar Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+/* Estilo general para los grupos de inputs */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* Iconos de Visa y MasterCard */
+.input-group i.fa-brands {
+  font-size: 24px;
+  color: #333;
+  margin-right: 10px;
+}
+
+/* Inputs de tarjeta, fecha y CVV */
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+/* Inputs de fecha y CVV en una misma fila */
+.input-group input#fechaExpiracion {
+  width: 60%; /* Espacio para la fecha */
+  margin-right: 10px;
+}
+
+.input-group input#codigoSeguridad {
+  width: 35%; /* Espacio para el CVV */
+}
+
+/* Efecto al enfocar los inputs */
+.input-group input:focus {
+  border-color: #0070f3;
+  outline: none;
+}
+
+/* Ocultar etiquetas visuales para accesibilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+
+
+
+.contact-container {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-button {
+  background-color: #69322a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-button i {
+  font-size: 18px;
+}
+
+.contact-menu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 150px;
+}
+
+.contact-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.contact-menu a:hover {
+  background-color: #f4f4f4;
+}
+
+.contact-menu a i {
+  color: #69322a;
+}

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burocracia Cero</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="text/javascript" src="http://www.carqueryapi.com/js/carquery.0.3.4.js"></script>
+  <!-- Tus estilos personalizados -->
+  <link rel="stylesheet" href="estilos.css">
+  <meta charset="UTF-8">
+ 
+  <title>Burocracia Cero</title>
+  <style>
+    
+    .tab-container {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 10px;
+    }
+
+    .tab-button {
+      padding: 20px 15px;
+      color: #000; /* Texto negro */
+   
+      border: 1px solid #ccc; /* Borde gris */
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 10px 10px 0 0;
+   
+      text-decoration: none; /* Eliminar subrayado del texto */
+    }
+
+    .tab-button:hover {
+      color: #7a3b3b; 
+    }
+
+    .tab-button.active {
+      color: #ffffff; /* Texto blanco para la pestaña activa */
+      background-color: #502626; /* Fondo azul para la pestaña activa */
+      border-bottom: none; /* Quitar el borde inferior en la pestaña activa */
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active-tab {
+      display: block;
+    }
+      /* Estilos para los inputs con flechas */
+      input {
+        font-size: 14px;
+    }
+  </style>
+</head>
+<header>
+<body>
+  
+  <nav id="main-navigation">
+    <a href="#" class="logo">
+        <img src="/logo.png" alt="Logotipo de la empresa">
+    </a>
+    <div class="nav-links">
+       <a href="https://burocraciacero.com/">Inicio</a>
+        <a href="#seccion1"> transferencia de vehículos</a>
+       
+        <a href="https://calm-customers-004738.framer.app/faq">FAQ</a>
+    </div>
+   <!-- Contenedor del botón de contacto -->
+<div id="contact-container">
+  <button id="contact-button">
+      Contáctenos
+  </button>
+  <div id="contact-menu">
+      <a href="https://wa.me/XXXXXXXXXXX" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="mailto:info@ekoevent.com">
+          <i class="fa-solid fa-envelope"></i> Gmail
+      </a>
+      <a href="#">
+          <i class="fa-solid fa-comment-dots"></i> Chat
+      </a>
+  </div>
+</div>
+
+</nav>
+
+
+
+  <div class="container">
+   
+    
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="header-background">
+        <div class="header-item">
+            <i class="fas fa-undo"></i>
+            <span>Garantía de reembolso</span>
+        </div>
+        <div class="header-item">
+            <i class="fas fa-truck"></i>
+            <span>Envío a todo al país</span>
+        </div>
+        <div class="header-item">
+            <i class="fas fa-headset"></i>
+            <span>Atención las 24 horas</span>
+        </div>
+        <div class="header-item">
+            <i class="fas fa-clock"></i>
+            <span>Documento provisional
+           
+        </div>
+    </div>
+
+
+  <div class="card-form">
+    <div class="tab-container">
+      <button class="tab-button" onclick="showTab('vehiculo')">1.Vehículo</button>
+      <button class="tab-button" onclick="showTab('precio')">2.Precio</button>
+      <button class="tab-button" onclick="showTab('pago')">3.Pago</button>
+      <button class="tab-button" onclick="showTab('documentos')">4.Documentos</button>
+    </div>
+  
+    <div id="vehiculo" class="tab-content active-tab">
+      <img src="/car-citroen-vehicle-2-svgrepo-com.svg" alt="Vehículo" width="60" height="64">
+  
+      <form id="formVehiculo">
+        <!-- Fecha de Matriculación -->
+        <label for="fechaMatriculacion">Fecha de Matriculación</label>
+        <div class="fecha-container">
+          <input type="date" id="fechaMatriculacion" name="fechaMatriculacion" class="fecha-input" required placeholder="dd/mm/yyyy">
+          <span class="fecha-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m4 7H4a2 2 0 00-2 2v7a2 2 0 002 2h16a2 2 0 002-2v-7a2 2 0 00-2-2z" />
+            </svg>
+          </span>
+        </div>
+            <!-- Marca -->
+        <label for="marca">Marca</label>
+        <div class="input-container">
+          <input type="text" id="marca" name="marca" placeholder="Marca" required>
+        </div>
+         
+        <!-- Modelo -->
+        <label for="modelo">Modelo</label>
+        <div class="input-container">
+          <input type="text" id="modelo" name="modelo" placeholder="Modelo" required>
+        </div>
+        <!-- Comunidad Autónoma -->
+        <label for="comunidadAutonomaComprador">Comunidad Autónoma del Comprador</label>
+        <div class="input-container">
+          <input type="text" id="comunidadAutonomaComprador" name="comunidadAutonomaComprador" placeholder="Comunidad Autónoma" required>
+        </div>
+   
+        <!-- Combustible -->
+        <label for="combustible">Combustible</label>
+        <div class="input-container">
+          <input type="text" id="combustible" name="combustible" placeholder="Combustible" required>
+        </div>
+  
+       
+      
+  
+        <!-- Precio Contrato -->
+        <label for="precioContrato">Precio de compraventa (€)</label>
+       
+        <input type="number" id="precioContrato" name="precioContrato" placeholder="Precio de compraventa (€)" required>
+      </form>
+      <button type="button" id="calcularPrecioBtn" class="pepe">Calcular precio</button>
+    </div>
+
+    <div id="precio" class="tab-content">
+      <h2>Precio</h2>
+      <form id="formPrecio">
+        <div class="precio-detalles">
+          <p><strong>Cambio de nombre:</strong> <span id="totalCambio">129.85 €</span></p>
+          <div id="resultadoPrecio" style="margin-top: 20px;"></div>
+    
+          <p><strong>Incluye:</strong></p>
+          <ul>
+            <li><span>Tasas DGT:</span> <span id="tasasDGT">55.70 €</span></li>
+            <li><span>Gestión:</span> <span id="gestion">61.36 €</span></li>
+            <li><span>IVA:</span> <span id="iva">12.89 €</span></li>
+            <li><span>Envío a domicilio:</span> <span id="envio">Gratuito</span></li>
+            <li>
+              <span>Impuesto de transmisiones</span> 
+              <a href="#" id="mostrarInfo">+info</a>: 
+              <span id="impuesto">0 €</span>
+            </li>
+          </ul>
+          
+          <p><strong>Te recomendamos añadir:</strong></p>
+      
+          <p><strong>Total:</strong> <span id="total">129.95 €</span></p>
+        </div>
+      </form>
+    </div>
+    
+    <!-- Modal -->
+    <div id="modalInfo" class="modal">
+      <div class="modal-content">
+        <span class="close" id="cerrarModal">&times;</span>
+        <h3>Impuesto de transmisiones</h3>
+        <p>El Impuesto sobre Transmisiones Patrimoniales (ITP) es un tributo que el comprador debe abonar a Hacienda en los cambios de titular de un vehículo entre particulares.</p>
+        <p>Se calcula aplicando un porcentaje, que varía según la comunidad autónoma del comprador, al valor más alto entre el precio acordado de compraventa y el valor venal del vehículo según las tablas de Hacienda.</p>
+        <h4>Cálculo del impuesto</h4>
+        <ul>
+          <li>Valoración tablas hacienda: <span id="valorHacienda">16200 €</span></li>
+          <li>Porcentaje de depreciación: <span id="depreciacion">34 %</span></li>
+          <li>Valor fiscal: <span id="valorFiscal">0.00 €</span></li>
+          <li>ITP calculado: <span id="itpCalculado">0.00 €</span></li>
+        </ul>
+      </div>
+    </div>
+    <div id="pago" class="tab-content">
+      <h2>Pago</h2>
+      <form id="formPago">
+        <div class="pago-datos">
+          <label for="nombreApellidos">Nombre y Apellidos</label>
+          <input type="text" id="nombreApellidos" name="nombreApellidos" placeholder="Nombre y Apellidos" required>
+    
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+    
+          <!-- Correo -->
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="correo" placeholder="Correo" required>
+    
+          <button type="button" id="verResumenBtn">Ver resumen del trámite</button>
+        </div>
+    
+        <div class="pago-resumen">
+          <p><strong>Total a pagar: <span id="pagoTotal">0.00</span> €</strong></p>
+    
+          <ul>
+            <li><strong>Garantía de devolución</strong></li>
+            <li><strong>Envío gratuito</strong></li>
+            <li><strong>Atención 24/7</strong></li>
+          </ul>
+    
+          <p><strong>Tarjeta de crédito:</strong></p>
+    
+          <!-- Campo de número de tarjeta con iconos Visa y MasterCard -->
+          <div class="input-group">
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-cc-mastercard"></i>
+            <input type="text" id="numeroTarjeta" placeholder="Número de tarjeta (1234 5678 9012 3456)" required>
+          </div>
+    
+          <!-- Fecha de expiración y código de seguridad -->
+          <div class="input-group">
+            <label for="fechaExpiracion" class="sr-only">Fecha de expiración</label>
+            <input type="text" id="fechaExpiracion" placeholder="MM/AA" pattern="\d{2}/\d{2}" required>
+            <label for="codigoSeguridad" class="sr-only">Código de seguridad</label>
+            <input type="text" id="codigoSeguridad" placeholder="CVV" maxlength="3" required>
+          </div>
+    
+          <button type="submit">Tramitar <span id="pagoTotalBoton">0.00</span> €</button>
+        </div>
+      </form>
+    </div>
+
+
+    <div id="modalDocumento" class="modal">
+      <div class="modal-overlay"></div> <!-- Fondo del modal -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="logo.png" alt="Logo de Burocracia" class="logo"> <!-- Logo -->
+        
+        </div>
+        <div class="modal-body" id="documentoPreview">
+          <!-- Aquí se mostrarán los datos dinámicamente -->
+        </div>
+        <button id="descargarPDFBtn" class="modal-button">Descargar PDF</button>
+      </div>
+    </div>
+    
+    
+
+    <div id="documentos" class="tab-content">
+      <h2>Documentos</h2>
+      <p><strong>Adjuntar documentación</strong></p>
+      <p style="font-size: 13px;">Ten preparada la siguiente documentación, te la pediremos:</p>
+      <p style="font-size: 13px;">Es importante que la documentación que se adjunte sea de calidad.</p>
+      
+      <ul>
+          <li><strong>DNI del comprador</strong></li>
+          <li><strong>Padrón comprador</strong>: Solo si el domicilio del comprador no coincide con el DNI, deberá presentar un certificado de empadronamiento.</li>
+          <li><strong>DNI del vendedor</strong></li>
+          <li><strong>Ficha técnica del vehículo</strong></li>
+          <li><strong>Permiso de circulación original del vehículo</strong></li>
+      </ul>
+  
+      <p style="font-size: 13px;">Si vas a hacer fotos, te recomendamos:</p>
+      <ul>
+          <li>Asegúrate de evitar brillos en los documentos.</li>
+          <li>Tener una buena iluminación y evitar sombras.</li>
+          <li>Enfocar bien, la foto debe ser nítida y no estar borrosa.</li>
+          <li>No cortar ni doblar, los documentos deben verse completos.</li>
+      </ul>
+  
+      <!-- Área de carga de archivos -->
+      <div id="dropArea" class="drop-area">
+          <p>Arrastra y suelta los archivos aquí o haz clic en el botón</p>
+          <input type="file" id="fileInput" multiple hidden>
+          <button type="button" class="btn-adjuntar" onclick="document.getElementById('fileInput').click();">Adjuntar ahora</button>
+      </div>
+  
+      <!-- Barra de progreso -->
+      <div id="progressContainer" style="display: none; margin-top: 10px;">
+          <div id="progressBar" style="width: 0%; height: 5px; background-color: green;"></div>
+      </div>
+  
+      <!-- Lista de archivos subidos -->
+      <ul id="fileList"></ul>
+  
+      <div class="documento-opciones">
+          <button type="button" class="btn-mas-tarde">Más tarde</button>
+      </div>
+  </div>
+  
+  <div class="card-table">
+    <h2>Listado de Vehículos</h2>
+    <table id="tablaVehiculos">
+      <thead>
+        <tr>
+          <th>Fecha de Matriculación</th>
+          <th>Comunidad Autónoma</th>
+          <th>Combustible</th>
+          <th>Correo</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+    
+
+
+  
+</header>
+
+
+</h2>
+<h1 style="color: white;"> conoce otros servicios de Burocracia Cero</h1>
+<h2 style="color: white; font-size: 13px; text-align: center; margin-bottom: 50px;">
+
+  <br>
+ 
+</h2>
+
+<div class="prices">
+    
+    
+    <div class="price-card">
+        <i class="fas fa-ban icon" style="color: #5e2c2c; font-size: 24px;"></i>
+        <h3>Servicio de Cancelación de Dominio</h3>
+        <p class="price-details">Paquete completo<br>Envío incluido<br>Incluye gestión de ITP</p>
+        <button class="price-button" onclick="window.open('https://forms.zohopublic.eu/internationalsolutionsenterp1/form/Cancelacinreservadedominio/formperma/KfIPukTCqLqOkmx4m3vxjaJWU9aVfCXPvM0_gVHa7zU', '_blank')">Más info</button>
+    </div>
+    
+    <div class="price-card">
+        <i class="fas fa-tag icon" style="color: #5e2c2c; font-size: 24px;"></i>
+        <h3>Servicio de Etiqueta Ambiental DGT</h3>
+        <p class="price-details">Paquete completo<br>Envío incluido<br>Incluye gestión de ITP</p>
+        <button class="price-button" onclick="window.open('https://etiquetadgt.burocraciacero.com/', '_blank')">Más info</button>
+    </div>
+    
+    <div class="price-card">
+        <i class="fas fa-id-card icon" style="color: #5e2c2c; font-size: 24px;"></i>
+        <h3>Servicio de Duplicado de Carnet</h3>
+        <p class="price-details">Paquete completo<br>Envío incluido<br>Incluye gestión de ITP</p>
+        <button class="price-button" onclick="window.open('https://forms.zohopublic.eu/internationalsolutionsenterp1/form/FormsDuplicadodecarnetdeconducir/formperma/ObOXM19vcxxuZeV1IIe40DZAmoAYhqoutz_1snwrZu8', '_blank')">Más info</button>
+    </div>
+</div>
+
+</div>
+
+<script type="module" src="/server.js"></script>
+<script type="module" src="/app.js"></script>
+<script type="module" src="/tabla.js"></script>
+ 
+<script>
+  // Función para manejar el cambio de pestañas
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-button');
+
+    // Ocultar todas las secciones y eliminar la clase 'active' de los botones
+    tabs.forEach(tab => tab.classList.remove('active-tab'));
+    buttons.forEach(button => button.classList.remove('active'));
+
+    // Mostrar la sección seleccionada
+    const selectedTab = document.getElementById(tabId);
+    if (selectedTab) {
+      selectedTab.classList.add('active-tab');
+    }
+
+    // Marcar la pestaña correspondiente como activa
+    const activeButton = document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`);
+    if (activeButton) {
+      activeButton.classList.add('active');
+    }
+  }
+
+  // Inicializar las funciones al cargar el DOM
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mostrar la primera pestaña por defecto
+    showTab('vehiculo');
+
+  
+
+    // Inicializar autocompletados
+    initializeAutocomplete();
+  });
+
+  // Función para inicializar autocompletados
+
+ // script.js
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerButton = document.getElementById("hamburger-button");
+  const navLinksContainer = document.querySelector(".nav-links-container");
+
+  hamburgerButton.addEventListener("click", function () {
+    navLinksContainer.classList.toggle("active");
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contactButton = document.getElementById("contact-button");
+    const contactMenu = document.getElementById("contact-menu");
+
+    if (contactButton && contactMenu) {
+        contactButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            contactMenu.style.display = contactMenu.style.display === "block" ? "none" : "block";
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!contactButton.contains(event.target) && !contactMenu.contains(event.target)) {
+                contactMenu.style.display = "none";
+            }
+        });
+    }
+});
+
+</script>
+
+    <!-- Script de Zoho SalesIQ -->
+    <script>
+      window.$zoho = window.$zoho || {};
+      window.$zoho.salesiq = window.$zoho.salesiq || { ready: function() {} };
+
+      (function() {
+          var d = document;
+          var s = d.createElement("script");
+          s.src = "https://salesiq.zohopublic.eu/widget?wc=siq45ca2ee213a30162bc0b1cd88d271ebca1e8b1b631be7969995062c80d04bfa95c8dcf3a8994897cd11ade72f04cc865";
+          s.defer = true;
+          d.getElementsByTagName("body")[0].appendChild(s);
+      })();
+  </script>
+</body>
+<footer>
+  <div class="footer-container">
+      <div class="footer-logo">
+          <img src="buro.png" alt="Burocracia Cero">
+          <p>Distribuidor autorizado de transferencias vehicular </p>
+      </div>
+      <div class="footer-contact">
+          <h4>Contactar</h4>
+          <ul>
+              <li><a href="#">Contacto</a></li>
+              <li><a href="mailto:info@burocraciacero.com">info@burocraciacero.com</a></li>
+          </ul>
+      </div>
+      <div class="footer-legal">
+          <h4>Avisos Legales</h4>
+          <ul>
+              <li><a href="https://calm-customers-004738.framer.app/avisos-legales">Aviso Legal</a></li>
+          
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+     
+      <p>Copyright © 2025 International Solutions Enterprise LLC – Derechos Reservados</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+      background-color: #612f2f;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      font-family: Arial, sans-serif;
+  }
+
+  .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+
+  .footer-logo img {
+      width: 150px;
+      margin-bottom: 10px;
+  }
+
+  .footer-logo p {
+      font-size: 14px;
+  }
+
+  .footer-contact h4, 
+  .footer-legal h4 {
+      margin-bottom: 10px;
+  }
+
+  .footer-contact ul, 
+  .footer-legal ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  .footer-contact ul li, 
+  .footer-legal ul li {
+      margin: 5px 0;
+  }
+
+  .footer-contact ul li a, 
+  .footer-legal ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+  }
+
+  .footer-contact ul li a:hover, 
+  .footer-legal ul li a:hover {
+      text-decoration: underline;
+  }
+
+  .footer-bottom {
+      margin-top: 20px;
+      text-align: center;
+      border-top: 1px solid #ffffff40;
+      padding-top: 15px;
+  }
+
+  .footer-button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 10px;
+  }
+
+  .footer-button:hover {
+      background-color: #003d7a;
+  }
+
+  .footer-bottom p {
+      font-size: 12px;
+      opacity: 0.8;
+  }
+</style>
+
+</html>
+   
