@@ -1,8 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
-
-/* Aquí comienzan las demás reglas CSS */
 
 
 
@@ -18,7 +14,7 @@ body {
   height: 100vh; /* Altura igual al viewport */
   background: url('./car.png') no-repeat center center fixed;
   background-size: cover;
-  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  font-family:sans-serif ; /* Aplicar Roboto como fuente principal */
   color: #333; /* Color de texto general */
 }
 
@@ -40,6 +36,7 @@ h1 {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
 }
 
 .card-form label {
@@ -57,7 +54,8 @@ h1 {
   margin-bottom: 10px;
   border-radius: 4px;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif; /* Asegurar que los inputs usen Roboto */
+  font-family:sans-serif ; 
+   /* Asegurar que los inputs usen Roboto */
 }
 
 .card-form input:focus,
@@ -74,7 +72,8 @@ h1 {
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  font-family: 'Roboto', sans-serif; /* Asegurar que los botones usen Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que los botones usen Roboto */
 }
 
 .card-form .pepe {
@@ -106,7 +105,8 @@ td {
   text-align: left;
   border-bottom: 1px solid #ddd;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif; /* Asegurar que las tablas usen Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que las tablas usen Roboto */
 }
 
 th {
@@ -137,7 +137,8 @@ tr:hover {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   text-decoration: none; /* Eliminar subrayado del texto */
   margin-right: 5px; /* Separar las pestañas horizontalmente */
-  font-family: 'Roboto', sans-serif; /* Asegurar que las pestañas usen Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que las pestañas usen Roboto */
 }
 
 .tab-content {
@@ -167,7 +168,7 @@ tr:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
   /* Importar la fuente Roboto desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 
 * {
   margin: 0;
@@ -181,7 +182,8 @@ body {
   height: 100vh; /* Altura igual al viewport */
   background: url('./car.png') no-repeat center center fixed;
   background-size: cover;
-  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  font-family:sans-serif ; 
+ ;  /* Aplicar Roboto como fuente principal */
   color: #333; /* Color de texto general */
 }
 
@@ -197,7 +199,8 @@ h1 {
   margin: 10px 0;
   font-size: 16px;
   color: #333;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .precio-detalles ul {
@@ -209,7 +212,8 @@ h1 {
   margin: 5px 0;
   font-size: 14px;
   color: #555;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .precio-detalles strong {
@@ -224,7 +228,8 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más destacada */
   max-width: 600px; /* Ancho máximo aumentado */
   margin: 20px auto; /* Centrado horizontal */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .pago-datos label {
@@ -232,7 +237,8 @@ h1 {
   margin: 8px 0; /* Espaciado más amplio */
   font-weight: bold;
   font-size: 14px; /* Fuente más grande */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .pago-datos input {
@@ -242,7 +248,8 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 8px; /* Bordes redondeados más grandes */
   font-size: 14px; /* Fuente más grande */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   box-sizing: border-box;
 }
 
@@ -255,7 +262,8 @@ h1 {
   cursor: pointer;
   font-size: 16px; /* Tamaño de fuente mayor */
   width: 100%; /* Botón ocupa todo el ancho */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .pago-resumen {
@@ -265,7 +273,8 @@ h1 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más destacada */
   max-width: 600px; /* Ancho máximo aumentado */
   margin: 20px auto; /* Centrado horizontal */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .pago-resumen ul {
@@ -277,7 +286,8 @@ h1 {
   font-size: 14px; /* Fuente más grande */
   color: #555;
   margin-bottom: 8px; /* Espaciado mayor */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .pago-resumen img.klarna-logo {
@@ -294,7 +304,8 @@ h1 {
   border-radius: 8px; /* Bordes redondeados más grandes */
   font-size: 16px; /* Fuente más grande */
   cursor: pointer;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .pago-resumen button:hover {
@@ -313,7 +324,8 @@ h1 {
   .pago-datos label,
   .pago-resumen li {
     font-size: 12px; /* Ajustar fuente en pantallas pequeñas */
-    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+    font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   }
 
   .pago-datos input {
@@ -340,7 +352,8 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 500px;
   margin: 20px auto;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 #documentos h2 {
@@ -348,7 +361,8 @@ h1 {
   margin-bottom: 15px;
   color: #333;
   text-align: center;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 #documentos p {
@@ -356,7 +370,8 @@ h1 {
   line-height: 1.6;
   margin-bottom: 10px;
   color: #555;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 #documentos ul {
@@ -368,7 +383,8 @@ h1 {
   font-size: 14px;
   color: #555;
   margin-bottom: 8px;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .drop-area {
@@ -380,7 +396,8 @@ h1 {
   margin-top: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .drop-area:hover {
@@ -424,7 +441,8 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 #fileList li span {
@@ -441,7 +459,8 @@ h1 {
   color: red;
   font-size: 14px;
   cursor: pointer;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .delete-file:hover {
@@ -457,7 +476,6 @@ h1 {
 }
 
 /* Importar la fuente Roboto desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -471,7 +489,8 @@ body {
   height: 100vh; /* Altura igual al viewport */
   background: url('./car.png') no-repeat center center fixed;
   background-size: cover;
-  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  font-family:sans-serif ; 
+ ;  /* Aplicar Roboto como fuente principal */
   color: #333; /* Color de texto general */
 }
 
@@ -485,7 +504,8 @@ body {
   background-color: #7a3b3b;
   color: white;
   flex: 1;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .documento-opciones button:hover {
@@ -509,13 +529,15 @@ body {
 
   #documentos h2 {
     font-size: 18px;
-    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+    font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   }
 
   #documentos p,
   #documentos ul li {
     font-size: 13px;
-    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+    font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   }
 
   .drop-area {
@@ -525,7 +547,8 @@ body {
   .documento-opciones button {
     font-size: 13px;
     padding: 8px;
-    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+    font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   }
 }
 
@@ -540,7 +563,8 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
   padding: 10px; /* Reducir padding */
   z-index: 1000; /* Asegurar que esté encima de otros elementos */
-  font-family: 'Roboto', sans-serif; /* Cambiar la fuente a Roboto */
+  font-family:sans-serif ; 
+ ;  /* Cambiar la fuente a Roboto */
   transition: left 0.3s ease-in-out; /* Animación para el desplazamiento */
 }
 
@@ -550,7 +574,8 @@ body {
   margin-bottom: 6px; /* Espacio reducido */
   font-size: 10px; /* Reducir aún más el tamaño del texto */
   color: #333;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Tabla dentro de la tarjeta */
@@ -559,7 +584,8 @@ body {
   border-collapse: collapse; /* Eliminar espacios entre celdas */
   font-size: 8px; /* Reducir aún más tamaño de fuente */
   margin-top: 4px; /* Separación de la tabla respecto al título */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Estilo para las celdas de la tabla */
@@ -569,7 +595,8 @@ body {
   text-align: left;
   border-bottom: 1px solid #ddd;
   font-size: 7px; /* Reducir aún más tamaño de la fuente en las celdas */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Estilo para los botones */
@@ -583,7 +610,8 @@ body {
   border: none; /* Sin bordes */
   border-radius: 4px; /* Bordes redondeados */
   cursor: pointer; /* Cursor en forma de mano */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Estilo para los botones al pasar el mouse */
@@ -638,7 +666,8 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box; /* Asegura que el padding y border no afecten el ancho */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Cambiar color del borde al enfocar */
@@ -660,7 +689,8 @@ input:focus {
   padding: 8px;
   font-size: 14px;
   cursor: pointer;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Color de fondo para la opción activa */
@@ -680,7 +710,8 @@ input:focus {
   input[type="number"] {
     font-size: 12px;
     padding: 6px;
-    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+    font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   }
 }
 
@@ -695,7 +726,8 @@ input:focus {
   /* Más opacidad */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
   text-align: center;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Estilos del contenido */
@@ -703,10 +735,11 @@ input:focus {
   font-size: 22px; /* Aumentar el tamaño de la fuente */
   color: #ffffff;
   margin-bottom: 15px; /* Ajustar margen para dar más espacio */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 /* Importar la fuente Roboto desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 
 * {
   margin: 0;
@@ -715,7 +748,8 @@ input:focus {
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  font-family:sans-serif ; 
+ ;  /* Aplicar Roboto como fuente principal */
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -727,7 +761,8 @@ body {
   color: #ffffff;
   line-height: 1.6; /* Aumentar el interlineado para mejorar la legibilidad */
   margin-bottom: 15px; /* Ajustar margen para separar más los elementos */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .contact {
@@ -741,7 +776,8 @@ body {
 .contact span {
   font-size: 16px; /* Aumentar el tamaño del texto */
   color: #555;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Botón verde para atención al cliente */
@@ -759,7 +795,8 @@ body {
   cursor: pointer;
   margin-left: 30px;
   margin-top: 20px;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .contact-button:hover {
@@ -830,7 +867,8 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .section {
@@ -865,7 +903,8 @@ body {
   align-items: center;
   margin: 10px;
   padding: 15px;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .feature i {
@@ -898,7 +937,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 250px; /* Ajusta según necesites */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .price-button {
@@ -912,7 +952,8 @@ body {
   margin-top: auto; /* Asegura que el botón siempre quede alineado abajo */
   display: flex;
   justify-content: center;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .price-button:hover {
@@ -930,7 +971,8 @@ body {
   color: #333;
   font-size: 1.3em;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Precio destacado */
@@ -940,7 +982,8 @@ body {
   margin: 10px 0;
   color: #723737;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Detalles de precios */
@@ -949,7 +992,8 @@ body {
   font-size: 14px;
   margin-bottom: 10px;
   line-height: 1.5;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .price-card .price-details ul {
@@ -966,7 +1010,8 @@ body {
   gap: 8px;
   color: #723737;
   font-weight: 500;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Iconos */
@@ -988,7 +1033,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .price-card button:hover {
@@ -1010,10 +1056,11 @@ body {
   position: relative; /* Ajusta el comportamiento dentro del flujo */
   margin-bottom: 30px;
   margin-top: -20px; /* Reduce el espacio superior */
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 /* Importar la fuente Roboto desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 
 * {
   margin: 0;
@@ -1022,7 +1069,8 @@ body {
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  font-family:sans-serif ; 
+ ;  /* Aplicar Roboto como fuente principal */
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -1036,14 +1084,14 @@ body {
 }
 
 /* Encabezado principal */
-#main-navigation {
+#main-navigation { 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px; /* Reduce el padding general */
+  padding: 3px 10px; /* Reduce el padding general */
   background-color: #ffffff; /* Fondo blanco */
   color: black;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family: sans-serif;
 }
 
 .logo img {
@@ -1054,24 +1102,23 @@ body {
 /* Enlaces de navegación */
 .nav-links {
   display: flex;
-  gap: 15px;
+  gap: 10px; /* Reduce el espacio entre enlaces */
 }
 
 .nav-links a {
   color: rgb(54, 18, 18);
-  padding-inline: 20px;
+  padding-inline: 15px; /* Reduce un poco el espacio lateral */
   text-decoration: none;
   font-size: 15px; /* Tamaño ligeramente mayor */
-  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
-  font-weight: 450; /* Cambiado a semibold */
+  font-family: sans-serif;
+  font-weight: 450; /* Más semibold */
   transition: color 0.1s;
 }
 
 .nav-links a:hover {
   color: #502626; /* Color del texto */
-  transform: scale(1.2); /* Aumenta el tamaño del texto */
+  transform: scale(1.1); /* Efecto hover más sutil */
 }
-
 
 /* Contenedor del botón de contacto */
 #contact-container {
@@ -1083,43 +1130,46 @@ body {
 #contact-button {
   background-color: #69322a;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 18px; /* Reduce el padding */
   border: none;
-  border-radius: 20px;
+  border-radius: 18px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 600; /* Más semibold */
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px; /* Reduce el espacio entre icono y texto */
   transition: background-color 0.3s, transform 0.3s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 #contact-button i {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* Menú desplegable de contacto */
 #contact-menu {
   display: none;
   position: absolute;
-  top: 45px;
+  top: 40px;
   right: 0;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  width: 150px;
-  z-index: 9999; /* Para superponerlo correctamente */
+  width: 140px; /* Reduce un poco el ancho */
+  z-index: 9999;
 }
 
 #contact-menu a {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
+  gap: 8px; /* Reduce el espacio entre icono y texto */
+  padding: 8px;
   text-decoration: none;
   color: #333;
+  font-size: 14px;
+  font-weight: 600; /* Más semibold */
   transition: background 0.3s;
 }
 
@@ -1150,7 +1200,8 @@ body {
   border-radius: 8px;
   background-color: #f9f9f9;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
 }
 
 .feature:hover {
@@ -1174,13 +1225,15 @@ body {
   z-index: 1000;
   display: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
 }
 
 .autocomplete-list div {
   padding: 10px;
   cursor: pointer;
-  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
 }
 
 .autocomplete-list div:hover {
@@ -1215,7 +1268,8 @@ body {
   cursor: pointer;
   height: 50px;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   font-weight: 500;
 }
 
@@ -1240,7 +1294,8 @@ body {
   cursor: pointer;
   height: 40px;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
 }
 
 /* Estilo para los labels */
@@ -1249,7 +1304,8 @@ label {
   font-weight: bold;
   margin-bottom: 5px;
   display: block;
-  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
 }
 
 /* Modal */
@@ -1271,7 +1327,8 @@ label {
   border: 1px solid #888;
   width: 50%;
   border-radius: 8px;
-  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
 }
 
 .close {
@@ -1279,7 +1336,8 @@ label {
   float: right;
   font-size: 28px;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+  font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
 }
 
 .close:hover,
@@ -1304,18 +1362,19 @@ label {
   #main-navigation {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
+    padding: 6px;
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
   }
 
   .nav-links a {
-    padding-inline: 10px;
+    padding-inline: 2px;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+    font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   }
 
   .logo img {
@@ -1325,7 +1384,8 @@ label {
   .whatsapp-button {
     padding: 8px 12px;
     font-size: 12px;
-    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+    font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   }
 
   .whatsapp-button img {
@@ -1349,7 +1409,8 @@ label {
   .fecha-input {
     width: 100%;
     padding-left: 30px;
-    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+    font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   }
 
   .fecha-icon {
@@ -1358,20 +1419,23 @@ label {
 
   .card-form input {
     width: 100%;
-    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+    font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   }
 }
 
 @media (max-width: 480px) {
   .nav-links a {
     font-size: 12px;
-    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+    font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   }
 
   .whatsapp-button {
     padding: 6px 10px;
     font-size: 10px;
-    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+    font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   }
 
   .whatsapp-button img {
@@ -1386,25 +1450,25 @@ label {
   .fecha-input {
     font-size: 12px;
     height: 40px;
-    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+    font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   }
 
   .card-form input {
     font-size: 12px;
     height: 35px;
-    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+    font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   }
 
   label {
     font-size: 12px;
-    font-family: 'Roboto', sans-serif; /* Cambiar a Roboto */
+    font-family:sans-serif ; 
+ ;  /* Cambiar a Roboto */
   }
 }
 
 
-
-/* Importar la fuente Roboto desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
 /* Modal */
 .modal {
@@ -1417,7 +1481,8 @@ label {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.75);
-  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente principal */
+  font-family:sans-serif ; 
+ ;  /* Aplicar Roboto como fuente principal */
 }
 
 /* Modal Content */
@@ -1430,20 +1495,39 @@ label {
   width: 90%;
   max-width: 600px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 /* Modal Header */
 .modal-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: relative; /* Permite posicionar el botón de cierre */
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 1.2rem;
-  margin-bottom: 1.2rem;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  align-items: center;
+  position: relative;
 }
+
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 
 /* Reducir tamaño del título */
 .modal-header h2 {
@@ -1451,7 +1535,8 @@ label {
   font-weight: 600;
   color: #1a1a1a;
   margin: 0;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .modal-header .logo {
@@ -1470,7 +1555,8 @@ label {
   color: #888888;
   cursor: pointer;
   transition: color 0.2s ease;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .close-button:hover {
@@ -1482,7 +1568,8 @@ label {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #333333;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .modal-body h3 {
@@ -1491,12 +1578,14 @@ label {
   color: #1a1a1a;
   margin-top: 1.2rem;
   margin-bottom: 0.7rem;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .modal-body p {
   margin: 0.6rem 0;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .modal-body hr {
@@ -1517,7 +1606,8 @@ label {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
-  font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+  font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
 }
 
 .modal-button:hover {
@@ -1534,17 +1624,20 @@ label {
 
   .modal-header h2 {
     font-size: 1.2rem; /* Reducido aún más para móviles */
-    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+    font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   }
 
   .modal-body {
     font-size: 0.9rem;
-    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+    font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   }
 
   .modal-body h3 {
     font-size: 1.1rem;
-    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+    font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   }
 
   /* Ajuste del botón de cierre para móviles */
@@ -1552,12 +1645,13 @@ label {
     top: 8px;
     right: 8px;
     font-size: 1.6rem;
-    font-family: 'Roboto', sans-serif; /* Asegurar que use Roboto */
+    font-family:sans-serif ; 
+ ;  /* Asegurar que use Roboto */
   }
 }
 
 /* Importar Font Awesome */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
 
 /* Estilo general para los grupos de inputs */
 .input-group {
@@ -1581,7 +1675,8 @@ label {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family:sans-serif ; 
+ ; 
   transition: border-color 0.3s ease;
 }
 
@@ -1617,54 +1712,327 @@ label {
 
 
 
-.contact-container {
+
+/* Estilo del menú desplegable */
+.dropdown {
   position: relative;
   display: inline-block;
 }
 
-.contact-button {
-  background-color: #69322a;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
+.dropbtn {
+  color: rgb(54, 18, 18);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 300; /* Menos grosor */
+  padding-inline: 15px;
   cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-.contact-button i {
-  font-size: 18px;
-}
-
-.contact-menu {
+.dropdown-content {
   display: none;
   position: absolute;
-  top: 45px;
-  right: 0;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  top: 100%; /* Evita superposición con el botón */
+  left: 0;
   overflow: hidden;
-  width: 150px;
 }
 
-.contact-menu a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
   text-decoration: none;
-  color: #333;
-  transition: background 0.3s;
+  display: block;
+  font-size: 13px;
+  font-weight: 300; /* Reducción del grosor */
+  transition: background-color 0.3s ease;
 }
 
-.contact-menu a:hover {
+.dropdown-content a:hover {
   background-color: #f4f4f4;
 }
 
-.contact-menu a i {
-  color: #69322a;
+/* Mostrar el menú al pasar el mouse */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+/* Evitar que el menú desaparezca al hacer clic */
+.dropdown-content a:focus {
+  background-color: #e0e0e0;
+  outline: none;
+}
+
+/* Estilos únicos para el grupo de inputs */
+.custom-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px; /* Ajusta según sea necesario */
+}
+
+/* Ocultar etiquetas para screen readers */
+.custom-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Contenedor de la fecha con ícono */
+.custom-fecha-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Estilo del input de fecha */
+.custom-fecha-input {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* Espacio para el ícono */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+  height: 40px; /* Altura fija para alinear el ícono */
+}
+
+/* Estilo del ícono de calendario */
+.custom-fecha-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Evita que el ícono interfiera con el clic en el input */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; /* Ancho del ícono */
+  height: 20px; /* Alto del ícono */
+}
+
+.custom-icon {
+  width: 100%; /* Ajusta el tamaño del SVG al contenedor */
+  height: 100%;
+  color: #666; /* Color del ícono */
+}
+
+/* Estilo del input de CVV */
+.custom-cvv-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+  height: 40px; /* Altura fija para mantener consistencia */
+}
+
+
+.secure-container {
+  max-width: 320px;
+  position: absolute;
+  top: 150px;
+  right: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 25px;
+}
+
+.secure-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.secure-text {
+  font-size: 13px;
+  color: #666;
+}
+
+.secure-rating {
+  margin: 8px 0;
+}
+
+.secure-rating i {
+  color: #FFD700;
+  font-size: 14px;
+}
+
+.secure-review {
+  font-size: 10px;
+  color: #777;
+}
+
+.secure-payment-section {
+  margin-top: 15px;
+}
+
+.secure-payment-title {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.secure-payment-icons i {
+  font-size: 20px;
+  margin: 3px;
+  color: #555;
+}
+
+/* Media Queries para tablets y móviles */
+@media (max-width: 768px) {
+  .secure-container {
+    position: relative; /* Cambia a posición relativa */
+    max-width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+    margin: 20px auto; /* Centra el contenedor */
+    top: 0; /* Restablece la posición superior */
+    right: 0; /* Restablece la posición derecha */
+  }
+
+  .secure-title {
+    font-size: 16px; /* Reducir el tamaño de la fuente para tablets y móviles */
+  }
+
+  .secure-text {
+    font-size: 12px; /* Reducir el tamaño de la fuente para tablets y móviles */
+  }
+
+  .secure-rating i {
+    font-size: 12px; /* Reducir el tamaño de los íconos de rating */
+  }
+
+  .secure-review {
+    font-size: 9px; /* Reducir el tamaño de la fuente para tablets y móviles */
+  }
+
+  .secure-payment-title {
+    font-size: 12px; /* Reducir el tamaño de la fuente para tablets y móviles */
+  }
+
+  .secure-payment-icons i {
+    font-size: 16px; /* Reducir el tamaño de los íconos de pago */
+  }
+}
+
+/* Media Queries para dispositivos muy pequeños (ej: móviles en orientación vertical) */
+@media (max-width: 480px) {
+  .secure-container {
+    padding: 10px; /* Reducir el padding para pantallas muy pequeñas */
+  }
+
+  .secure-title {
+    font-size: 14px; /* Reducir aún más el tamaño de la fuente */
+  }
+
+  .secure-text {
+    font-size: 11px; /* Reducir el tamaño de la fuente */
+  }
+
+  .secure-rating i {
+    font-size: 10px; /* Reducir el tamaño de los íconos de rating */
+  }
+
+  .secure-review {
+    font-size: 8px; /* Reducir el tamaño de la fuente */
+  }
+
+  .secure-payment-title {
+    font-size: 11px; /* Reducir el tamaño de la fuente */
+  }
+
+  .secure-payment-icons i {
+    font-size: 14px; /* Reducir el tamaño de los íconos de pago */
+  }
+}
+
+
+
+
+
+/* Estilos únicos para la sección de gestoría */
+.gestoria-section {
+  max-width: 800px; /* Ancho máximo de la sección */
+  margin: 40px auto; /* Centrar la sección */
+  padding: 20px;
+  background: white; /* Fondo claro */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-align: center; /* Centrar el texto */
+  margin-top: 200px;
+}
+
+.gestoria-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.gestoria-text {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6; /* Espaciado entre líneas */
+  margin-bottom: 20px;
+}
+
+.gestoria-images {
+  display: flex;
+  flex-direction: column; /* Las imágenes se apilan verticalmente */
+  align-items: center; /* Centrar las imágenes horizontalmente */
+  gap: 20px; /* Espacio entre las imágenes */
+}
+
+.gestoria-img {
+  max-width: 80%; /* Reducir el tamaño de las imágenes */
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados para las imágenes */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Media Queries para hacer la sección responsive */
+@media (max-width: 768px) {
+  .gestoria-section {
+    padding: 15px;
+  }
+
+  .gestoria-title {
+    font-size: 20px; /* Reducir el tamaño del título en pantallas pequeñas */
+  }
+
+  .gestoria-text {
+    font-size: 14px; /* Reducir el tamaño del texto en pantallas pequeñas */
+  }
+
+  .gestoria-img {
+    max-width: 90%; /* Ajustar el tamaño de las imágenes en tablets y móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .gestoria-title {
+    font-size: 18px; /* Reducir aún más el tamaño del título */
+  }
+
+  .gestoria-text {
+    font-size: 13px; /* Reducir aún más el tamaño del texto */
+  }
+
+  .gestoria-img {
+    max-width: 100%; /* Ajustar el tamaño de las imágenes en móviles pequeños */
+  }
 }
