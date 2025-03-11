@@ -4,6 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Burocracia Cero</title>
+  <script src="https://js.stripe.com/v3/"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -152,8 +153,9 @@
     <div class="tab-container">
       <button class="tab-button" onclick="showTab('vehiculo')">1.Vehículo</button>
       <button class="tab-button" onclick="showTab('precio')">2.Precio</button>
-      <button class="tab-button" onclick="showTab('pago')">3.Pago</button>
-      <button class="tab-button" onclick="showTab('documentos')">4.Documentos</button>
+      <button class="tab-button" onclick="showTab('documentos')">3.Documentos</button>
+      <button class="tab-button" onclick="showTab('pago')">4.Pago</button>
+    
     </div>
   
     <div id="vehiculo" class="tab-content active-tab">
@@ -228,6 +230,7 @@
       
           <p><strong>Total:</strong> <span id="total">129.95 €</span></p>
         </div>
+     
       </form>
     </div>
     
@@ -238,84 +241,22 @@
         <h3>Impuesto de transmisiones</h3>
         <p>El Impuesto sobre Transmisiones Patrimoniales (ITP) es un tributo que el comprador debe abonar a Hacienda en los cambios de titular de un vehículo entre particulares.</p>
         <p>Se calcula aplicando un porcentaje, que varía según la comunidad autónoma del comprador, al valor más alto entre el precio acordado de compraventa y el valor venal del vehículo según las tablas de Hacienda.</p>
+        
         <h4>Cálculo del impuesto</h4>
-        <ul>
-          <li>Valoración tablas hacienda: <span id="valorHacienda">16200 €</span></li>
-          <li>Porcentaje de depreciación: <span id="depreciacion">34 %</span></li>
-          <li>Valor fiscal: <span id="valorFiscal">0.00 €</span></li>
-          <li>ITP calculado: <span id="itpCalculado">0.00 €</span></li>
+        <ul class="calculo-lista">
+          <li>Valoración tablas hacienda: <strong><span id="valorHacienda">0.00 €</span></strong></li>
+          <li>Porcentaje de depreciación: <strong><span id="depreciacion">0%</span></strong></li>
+          <li>Valor fiscal: <strong><span id="valorFiscal">0.00 €</span></strong></li>
+          <li>ITP (4%): <strong><span id="itpCalculado">0.00 €</span></strong></li>
         </ul>
       </div>
     </div>
-    <div id="pago" class="tab-content">
-      <h2>Pago</h2>
-      <form id="formPago">
-        <div class="pago-datos">
-          <label for="nombreApellidos">Nombre y Apellidos</label>
-          <input type="text" id="nombreApellidos" name="nombreApellidos" placeholder="Nombre y Apellidos" required>
-    
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
-    
-          <!-- Correo -->
-          <label for="correo">Correo</label>
-          <input type="email" id="correo" name="correo" placeholder="Correo" required>
-    
-          <button type="button" id="verResumenBtn">Ver resumen del trámite</button>
-        </div>
-    
-        <div class="pago-resumen">
-          <p><strong>Total a pagar: <span id="pagoTotal">0.00</span> €</strong></p>
-    
-          <ul>
-            <li><strong>Garantía de devolución</strong></li>
-            <li><strong>Envío gratuito</strong></li>
-            <li><strong>Atención 24/7</strong></li>
-          </ul>
-    
-          <p><strong>Tarjeta de crédito:</strong></p>
-    
-          <!-- Campo de número de tarjeta con iconos Visa y MasterCard -->
-          <div class="input-group">
-            <i class="fa-brands fa-cc-visa"></i>
-            <i class="fa-brands fa-cc-mastercard"></i>
-            <input type="text" id="numeroTarjeta" placeholder="Número de tarjeta (1234 5678 9012 3456)" required>
-          </div>
-          <div class="custom-input-group">
-            <label for="fechaExpiracion" class="custom-sr-only">Fecha de expiración</label>
-            <div class="custom-fecha-container">
-              <input type="date" id="fechaExpiracion" name="fechaExpiracion" class="custom-fecha-input" required placeholder="dd/mm/yyyy">
-              <span class="custom-fecha-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="custom-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-       
-                </svg>
-              </span>
-            </div>
-            <label for="codigoSeguridad" class="custom-sr-only">Código de seguridad</label>
-            <input type="text" id="codigoSeguridad" class="custom-cvv-input" placeholder="CVV" maxlength="3" required>
-          </div>
-    
-          <button type="submit">Tramitar <span id="pagoTotalBoton">0.00</span> €</button>
-        </div>
-      </form>
-    </div>
 
-    <div id="modalDocumento" class="modal" style="display: none;">
-      <div id="cerrarModalDocumento" class="modal-overlay"></div> <!-- Fondo del modal -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <img src="logo.png" alt="Logo de Burocracia" class="logo"> <!-- Logo -->
-  
-        </div>
-        <div class="modal-body" id="documentoPreview">
-          <!-- Aquí se mostrarán los datos dinámicamente -->
-        </div>
-        <button id="descargarPDFBtn" class="modal-button">Descargar PDF</button>
-      </div>
-    </div>
-    
 
-    <div id="documentos" class="tab-content">
+
+
+
+     <div id="documentos" class="tab-content">
       <h2>Documentos</h2>
       <p><strong>Adjuntar documentación</strong></p>
       <p style="font-size: 13px;">Ten preparada la siguiente documentación, te la pediremos:</p>
@@ -353,9 +294,76 @@
       <ul id="fileList"></ul>
   
       <div class="documento-opciones">
-          <button type="button" class="btn-mas-tarde">Más tarde</button>
+          <button type="button" class="btn-mas-tarde" onclick="showTab('pago')">Más tarde</button>
       </div>
   </div>
+ 
+  <div class="pago-container">
+    <div id="pago" class="tab-content">
+      <h2>Pago</h2>
+      <form id="formPago">
+        <div class="pago-datos">
+          <label for="nombreApellidos">Nombre y Apellidos</label>
+          <input type="text" id="nombreApellidos" name="nombreApellidos" placeholder="Nombre y Apellidos" required>
+
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="correo" placeholder="Correo" required>
+
+          <button type="button" id="verResumenBtn">
+            Ver resumen del trámite
+          </button>
+        </div>
+
+        <div class="pago-resumen">
+          <p><strong>Total a pagar: <span id="pagoTotal">0.00</span> €</strong></p>
+
+          <ul>
+            <li><strong>Garantía de devolución</strong></li>
+            <li><strong>Envío gratuito</strong></li>
+            <li><strong>Atención 24/7</strong></li>
+          </ul>
+
+          <p><strong>Tarjeta de crédito:</strong></p>
+
+          <!-- Contenedores de Stripe Elements -->
+          <div id="card-number" class="stripe-element"></div>
+          <div id="card-expiry" class="stripe-element"></div>
+          <div id="card-cvc" class="stripe-element"></div>
+
+          <!-- Mensaje de error -->
+          <div id="card-errors" role="alert"></div>
+
+          <button type="submit">Tramitar <span id="pagoTotalBoton">0.00</span> €</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+  
+
+    <div id="modalDocumento" class="modal" style="display: none;">
+      <div id="cerrarModalDocumento" class="modal-overlay"></div> <!-- Fondo del modal -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="logo.png" alt="Logo de Burocracia" class="logo"> <!-- Logo -->
+  
+        </div>
+        <div class="modal-body" id="documentoPreview">
+          <!-- Aquí se mostrarán los datos dinámicamente -->
+        </div>
+        <button id="descargarPDFBtn" class="modal-button">Descargar PDF</button>
+      </div>
+    </div>
+    
+
+   
  
 
 </header>
@@ -411,39 +419,57 @@
  
  
 <script>
-  // Función para manejar el cambio de pestañas
-  function showTab(tabId) {
-    const tabs = document.querySelectorAll('.tab-content');
-    const buttons = document.querySelectorAll('.tab-button');
+ 
 
-    // Ocultar todas las secciones y eliminar la clase 'active' de los botones
-    tabs.forEach(tab => tab.classList.remove('active-tab'));
-    buttons.forEach(button => button.classList.remove('active'));
+ const tabOrder = ['vehiculo', 'precio', 'documentos', 'pago'];
 
-    // Mostrar la sección seleccionada
-    const selectedTab = document.getElementById(tabId);
-    if (selectedTab) {
-      selectedTab.classList.add('active-tab');
-    }
+function showTab(tabId) {
+  const tabs = document.querySelectorAll('.tab-content');
+  const buttons = document.querySelectorAll('.tab-button');
 
-    // Marcar la pestaña correspondiente como activa
-    const activeButton = document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`);
-    if (activeButton) {
-      activeButton.classList.add('active');
-    }
+  // Ocultar todas las secciones y desactivar botones
+  tabs.forEach(tab => tab.classList.remove('active-tab'));
+  buttons.forEach(button => button.classList.remove('active'));
+
+  // Mostrar la pestaña seleccionada
+  document.getElementById(tabId)?.classList.add('active-tab');
+
+  // Marcar el botón activo
+  document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`)?.classList.add('active');
+
+  // Guardar la pestaña activa en el atributo del body
+  document.body.setAttribute('data-active-tab', tabId);
+}
+
+function nextTab() {
+  const currentTab = document.body.getAttribute('data-active-tab') || 'vehiculo';
+  const currentIndex = tabOrder.indexOf(currentTab);
+
+  if (currentIndex !== -1 && currentIndex < tabOrder.length - 1) {
+    showTab(tabOrder[currentIndex + 1]);
   }
+}
 
-  // Inicializar las funciones al cargar el DOM
-  document.addEventListener("DOMContentLoaded", () => {
-    // Mostrar la primera pestaña por defecto
-    showTab('vehiculo');
+document.addEventListener("DOMContentLoaded", () => {
+  showTab('vehiculo'); // Iniciar en la primera pestaña sin recargas
+});
 
-  
 
-    // Inicializar autocompletados
-    initializeAutocomplete();
-  });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
   // Función para inicializar autocompletados
 
  // script.js
@@ -490,6 +516,7 @@ document.addEventListener("DOMContentLoaded", function () {
           s.defer = true;
           d.getElementsByTagName("body")[0].appendChild(s);
       })();
+      
   </script>
 </body>
 <footer>

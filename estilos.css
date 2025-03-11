@@ -1844,29 +1844,36 @@ label {
 .secure-container {
   max-width: 320px;
   position: absolute;
-  top: 150px;
+  top: 175px;
   right: 20px;
-  padding: 15px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  background: linear-gradient(145deg, #ffffff, #f5f9ff);
+  border-radius: 12px;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin-top: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .secure-title {
   font-size: 18px;
-  color: #333;
-  margin-bottom: 8px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
 }
 
 .secure-text {
   font-size: 13px;
   color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  padding: 0 10px;
 }
 
 .secure-rating {
-  margin: 8px 0;
+  margin: 12px 0;
 }
 
 .secure-rating i {
@@ -1877,87 +1884,127 @@ label {
 .secure-review {
   font-size: 10px;
   color: #777;
+  background: #f8f9fa;
+  padding: 4px 10px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-top: 4px;
 }
 
 .secure-payment-section {
-  margin-top: 15px;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .secure-payment-title {
   font-size: 14px;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.secure-payment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 8px;
 }
 
 .secure-payment-icons i {
-  font-size: 20px;
-  margin: 3px;
-  color: #555;
+  font-size: 28px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.secure-payment-icons i:hover {
+  transform: scale(1.15);
+}
+
+.secure-payment-icons .fa-cc-visa {
+  color: #1A1F71;
+}
+
+.secure-payment-icons .fa-cc-mastercard {
+  color: #EB001B;
+}
+
+.secure-payment-icons .fa-cc-amex {
+  color: #002E5B;
+}
+
+.secure-payment-icons .fa-cc-paypal {
+  color: #003087;
 }
 
 /* Media Queries para tablets y móviles */
 @media (max-width: 768px) {
   .secure-container {
-    position: relative; /* Cambia a posición relativa */
-    max-width: 90%; /* Ocupa el 90% del ancho de la pantalla */
-    margin: 20px auto; /* Centra el contenedor */
-    top: 0; /* Restablece la posición superior */
-    right: 0; /* Restablece la posición derecha */
+    position: relative;
+    max-width: 90%;
+    margin: 20px auto;
+    top: 0;
+    right: 0;
+    padding: 18px;
   }
 
   .secure-title {
-    font-size: 16px; /* Reducir el tamaño de la fuente para tablets y móviles */
+    font-size: 16px;
   }
 
   .secure-text {
-    font-size: 12px; /* Reducir el tamaño de la fuente para tablets y móviles */
+    font-size: 12px;
   }
 
   .secure-rating i {
-    font-size: 12px; /* Reducir el tamaño de los íconos de rating */
+    font-size: 12px;
   }
 
   .secure-review {
-    font-size: 9px; /* Reducir el tamaño de la fuente para tablets y móviles */
+    font-size: 9px;
   }
 
   .secure-payment-title {
-    font-size: 12px; /* Reducir el tamaño de la fuente para tablets y móviles */
+    font-size: 12px;
   }
 
   .secure-payment-icons i {
-    font-size: 16px; /* Reducir el tamaño de los íconos de pago */
+    font-size: 22px;
   }
 }
 
-/* Media Queries para dispositivos muy pequeños (ej: móviles en orientación vertical) */
+/* Media Queries para dispositivos muy pequeños */
 @media (max-width: 480px) {
   .secure-container {
-    padding: 10px; /* Reducir el padding para pantallas muy pequeñas */
+    padding: 12px;
   }
 
   .secure-title {
-    font-size: 14px; /* Reducir aún más el tamaño de la fuente */
+    font-size: 14px;
   }
 
   .secure-text {
-    font-size: 11px; /* Reducir el tamaño de la fuente */
+    font-size: 11px;
   }
 
   .secure-rating i {
-    font-size: 10px; /* Reducir el tamaño de los íconos de rating */
+    font-size: 10px;
   }
 
   .secure-review {
-    font-size: 8px; /* Reducir el tamaño de la fuente */
+    font-size: 8px;
   }
 
   .secure-payment-title {
-    font-size: 11px; /* Reducir el tamaño de la fuente */
+    font-size: 11px;
   }
 
   .secure-payment-icons i {
-    font-size: 14px; /* Reducir el tamaño de los íconos de pago */
+    font-size: 18px;
   }
 }
 
@@ -2035,4 +2082,150 @@ label {
   .gestoria-img {
     max-width: 100%; /* Ajustar el tamaño de las imágenes en móviles pequeños */
   }
+}
+
+
+
+
+/* Estilos para miniaturas y lista */
+#fileList {
+  list-style: none;
+  padding: 0;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  margin: 5px 0;
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.file-info {
+  flex: 1;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 5px;
+  background: #eee;
+  margin: 5px 0;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #ff6b6b;
+  transition: width 0.3s;
+}
+
+.success {
+  color: #ff6363;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+.pago-container {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.pago-container .tab-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pago-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.pago-container .pago-datos,
+.pago-container .pago-resumen {
+  margin-bottom: 20px;
+}
+
+.pago-container label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.pago-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.pago-container button {
+  background: #411515;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pago-container button:hover {
+  background: #471616;
+}
+
+.pago-container #verResumenBtn {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.pago-container .stripe-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  background: white;
+}
+
+.pago-container #card-errors {
+  color: #fa755a;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.pago-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pago-container ul li {
+  margin: 5px 0;
+  color: #555;
 }
