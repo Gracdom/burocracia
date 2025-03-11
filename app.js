@@ -47,10 +47,8 @@ const coeficientesComunidad = {
 
 // Función para listar vehículos
 async function listarVehiculos() {
-  const tbody = document.getElementById("tablaVehiculos")?.querySelector("tbody");
-  if (!tbody) return;
-
-  tbody.innerHTML = ""; // Limpia el contenido previo
+  const tbody = document.getElementById("tablaVehiculos").querySelector("tbody");
+  tbody.innerHTML = "";
 
   try {
     const querySnapshot = await getDocs(vehiculosCollection);
@@ -58,19 +56,19 @@ async function listarVehiculos() {
       const data = doc.data();
       const row = `
         <tr>
-          <td>${data.FechaMatriculacion || "No especificado"}</td>
-          <td>${data.ComunidadAutonoma || "No especificado"}</td>
-          <td>${data.Combustible || "No especificado"}</td>
-          <td>${data.Marca || "No especificado"}</td>
-          <td>${data.Modelo || "No especificado"}</td>
-          <td>${data.PrecioContrato || "No especificado"} €</td>
+          <td>${data.FechaMatriculacion}</td>
+          <td>${data.ComunidadAutonoma}</td>
+          <td>${data.Combustible}</td>
+          <td>${data.Correo}</td>
+          <td>${data.Marca}</td>
+          <td>${data.Modelo}</td>
+          <td>${data.PrecioContrato}</td>
         </tr>
       `;
       tbody.innerHTML += row;
     });
   } catch (error) {
-    console.error("Error al listar los vehículos:", error.message || error);
-    alert("Hubo un error al cargar los vehículos. Detalles: " + (error.message || error));
+    console.error("Error al listar los vehículos:", error);
   }
 }
 
@@ -111,16 +109,14 @@ function actualizarModal(valorHacienda, depreciacion, valorFiscal, itp) {
   }
 }
 
-// Función para calcular el precio final SIN GUARDAR EN FIREBASE
-function calcularPrecioSinGuardar() {
-  const fechaMatriculacion = document.getElementById("fechaMatriculacion")?.value;
-  const comunidadAutonoma = document.getElementById("comunidadAutonomaComprador")?.value;
-  const precioContrato = parseFloat(document.getElementById("precioContrato")?.value);
-  const marca = document.getElementById("marca")?.value;
-  const modelo = document.getElementById("modelo")?.value;
+// Función para calcular el precio final y enviar datos a Firebase
+async function calcularPrecio() {
+  const fechaMatriculacion = document.getElementById("fechaMatriculacion").value;
+  const comunidadAutonoma = document.getElementById("comunidadAutonomaComprador").value;
+  const precioContrato = parseFloat(document.getElementById("precioContrato").value);
 
-  if (!validarFormulario()) {
-    return;
+  if (!fechaMatriculacion || !comunidadAutonoma || isNaN(precioContrato)) {
+    return; // No mostrar alertas, simplemente salir de la función
   }
 
   // Valor base de Hacienda específico para el modelo Abarth 124 Spider TB Multiair 6V
@@ -133,20 +129,18 @@ function calcularPrecioSinGuardar() {
   const depreciacion = coeficientesDepreciacionVehiculos.find(c => antigüedad >= c.años)?.coef || 0.10;
 
   // Calcular el valor fiscal
-  const valorFiscal = calcularValorVenal(valorBaseHacienda, fechaMatriculacion, comunidadAutonoma);
+  const valorFiscal = valorBaseHacienda * depreciacion;
 
   // Calcular el ITP (4% sobre el valor más alto entre el precio de compraventa y el valor fiscal)
   const porcentajeITP = 4;
   const baseITP = Math.max(precioContrato, valorFiscal); // Usar el valor más alto
   const impuesto = calcularITP(baseITP, porcentajeITP);
 
-  // Calcular el total (incluyendo tasas DGT, gestión, IVA y costos adicionales)
+  // Calcular el total (sin incluir el precio de contrato)
   const tasasDGT = 55.70;
   const gestion = 61.36;
   const iva = 12.89;
-  const costoAdicional1 = 12; // Ejemplo: Seguro temporal
-  const costoAdicional2 = 9.90; // Ejemplo: Otro servicio
-  const total = tasasDGT + gestion + iva + impuesto + costoAdicional1 + costoAdicional2;
+  const total = tasasDGT + gestion + iva + impuesto;
 
   // Mostrar resultados en la interfaz
   document.getElementById("tasasDGT").textContent = `${tasasDGT.toFixed(2)} €`;
@@ -157,36 +151,11 @@ function calcularPrecioSinGuardar() {
 
   // Actualizar el modal con los valores calculados
   actualizarModal(valorBaseHacienda, depreciacion, valorFiscal, impuesto);
-}
-// Función para calcular el precio final y enviar datos a Firebase
-async function calcularPrecioYGuardar() {
-  // Validar el formulario antes de proceder
-  if (!validarFormulario()) {
-    return;
-  }
 
-  calcularPrecioSinGuardar(); // Primero calcula los precios
-
-  // Obtener los valores del formulario
-  const fechaMatriculacion = document.getElementById("fechaMatriculacion")?.value || "No especificado";
-  const comunidadAutonoma = document.getElementById("comunidadAutonomaComprador")?.value || "No especificado";
-  const precioContrato = parseFloat(document.getElementById("precioContrato")?.value) || 0;
-  const combustible = document.getElementById("combustible")?.value || "No especificado";
-  const marca = document.getElementById("marca")?.value || "No especificado";
-  const modelo = document.getElementById("modelo")?.value || "No especificado";
-
-  // Obtener los valores calculados
-  const valorFiscal = parseFloat(document.getElementById("valorFiscal")?.textContent.replace(" €", "")) || 0;
-  const impuesto = parseFloat(document.getElementById("impuesto")?.textContent.replace(" €", "")) || 0;
-  const total = parseFloat(document.getElementById("total")?.textContent.replace(" €", "")) || 0;
-
-  // Crear un nuevo registro para guardar en Firebase
+  // Guardar los datos en Firebase
   const nuevoRegistro = {
     FechaMatriculacion: fechaMatriculacion,
     ComunidadAutonoma: comunidadAutonoma,
-    Combustible: combustible,
-    Marca: marca,
-    Modelo: modelo,
     PrecioContrato: precioContrato,
     ValorFiscal: valorFiscal,
     ITP: impuesto,
@@ -195,150 +164,45 @@ async function calcularPrecioYGuardar() {
   };
 
   try {
-    // Guardar los datos en Firebase
     await addDoc(vehiculosCollection, nuevoRegistro);
-    console.log("Datos guardados correctamente en Firebase.");
     listarVehiculos(); // Actualizar la tabla después de guardar
-    alert("Los datos se han guardado correctamente.");
   } catch (error) {
-    console.error("Error al guardar en Firebase:", error.message || error);
-    alert("Hubo un error al guardar los datos. Detalles: " + (error.message || error));
+    console.error("Error al guardar en Firebase:", error);
   }
 
-  // Cambiar a la pestaña de precios
   showTab('precio');
 }
 
-// Función para validar el formulario
-function validarFormulario() {
-  const fechaMatriculacion = document.getElementById("fechaMatriculacion")?.value;
-  const comunidadAutonoma = document.getElementById("comunidadAutonomaComprador")?.value;
-  const precioContrato = parseFloat(document.getElementById("precioContrato")?.value);
-  const combustible = document.getElementById("combustible")?.value;
-  const marca = document.getElementById("marca")?.value;
-  const modelo = document.getElementById("modelo")?.value;
-
-  // Validar campos obligatorios
-  if (
-    !fechaMatriculacion ||
-    !comunidadAutonoma ||
-    isNaN(precioContrato) ||
-    !combustible ||
-    !marca ||
-    !modelo
-  ) {
-    alert("Por favor, completa todos los campos obligatorios.");
-    return false;
-  }
-
-  return true;
-}
-
 // Asociar eventos a botones y formularios
-document.getElementById("calcularPrecioBtn")?.addEventListener("click", calcularPrecioYGuardar);
+document.getElementById("calcularPrecioBtn").addEventListener("click", calcularPrecio);
 document.addEventListener("DOMContentLoaded", listarVehiculos);
 
 // Función para cambiar de pestañas
 function showTab(tabId) {
   document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active-tab'));
   document.querySelectorAll('.tab-button').forEach(button => button.classList.remove('active'));
-  document.getElementById(tabId)?.classList.add('active-tab');
-  document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`)?.classList.add('active');
+  document.getElementById(tabId).classList.add('active-tab');
+  document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`).classList.add('active');
 }
 
 // Mostrar modal al hacer clic en "+info"
-document.getElementById("mostrarInfo")?.addEventListener("click", function(event) {
+document.getElementById("mostrarInfo").addEventListener("click", function(event) {
   event.preventDefault();
-  calcularPrecioSinGuardar(); // Solo calcula los precios, sin guardar en Firebase
+  calcularPrecio(); // Asegura que se calculen los valores antes de abrir el modal
   document.getElementById("modalInfo").style.display = "block";
 });
 
 // Cerrar modal al hacer clic en la "X"
-document.getElementById("cerrarModal")?.addEventListener("click", function() {
+document.getElementById("cerrarModal").addEventListener("click", function() {
   document.getElementById("modalInfo").style.display = "none";
 });
 
 // Cerrar modal al hacer clic fuera del contenido
 window.onclick = function(event) {
-  const modal = document.getElementById("modalInfo");
-  if (event.target === modal) {
-    modal.style.display = "none";
+  if (event.target == document.getElementById("modalInfo")) {
+    document.getElementById("modalInfo").style.display = "none";
   }
 };
-
-
-
-
-
-
-
-// Función para mostrar el resumen del trámite
-function mostrarResumen() {
-  const total = parseFloat(document.getElementById("total").textContent.replace(" €", ""));
-  // Actualizar el total en la sección de pago
-  document.getElementById("pagoTotal").textContent = total.toFixed(2);
-  document.getElementById("pagoTotalBoton").textContent = total.toFixed(2);
-  // Mostrar el resumen
-  alert(`Resumen del trámite:\nTotal a pagar: ${total.toFixed(2)} €`);
-}
-
-// Función para manejar el envío del formulario de pago con Stripe
-document.getElementById("formPago").addEventListener("submit", async function (event) {
-  event.preventDefault(); // Evitar el envío del formulario
-
-  // Validar los campos del formulario de pago
-  const nombreApellidos = document.getElementById("nombreApellidos").value.trim();
-  const telefono = document.getElementById("telefono").value.trim();
-  const total = parseFloat(document.getElementById("pagoTotal").textContent.replace(" €", "")) * 100; // Convertir a céntimos
-
-  if (!nombreApellidos || !telefono || isNaN(total) || total <= 0) {
-    alert("Por favor, completa todos los campos y verifica el monto.");
-    return;
-  }
-
-  try {
-    // Llamar a la API backend para crear una sesión de pago en Stripe
-    const response = await fetch("http://localhost:3000/crear-sesion-pago", { // Asegúrate de que esta URL sea correcta
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: Math.round(total), name: nombreApellidos, phone: telefono }),
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || "Error al procesar el pago");
-    }
-
-    const data = await response.json();
-
-    // Redirigir a la página de pago de Stripe
-    const stripe = Stripe("pk_live_51OpdmhJaeP6i0xi8L4uF5lVArUwuapOlJwbovJdBec1RqDfCJzjwoDJGiHC5pDypqOyOhHXfPlvjDEZRgorZpRko00oVTCI0Xb"); // Asegúrate de usar la clave pública correcta
-    stripe.redirectToCheckout({ sessionId: data.id });
-  } catch (error) {
-    console.error("Detalles del error:", error);
-    alert(`Error al procesar el pago: ${error.message}`);
-  }
-});
-
-// Función para actualizar el total en la sección de pago
-function actualizarTotalPago() {
-  const total = parseFloat(document.getElementById("total").textContent.replace(" €", ""));
-  document.getElementById("pagoTotal").textContent = total.toFixed(2);
-  document.getElementById("pagoTotalBoton").textContent = total.toFixed(2);
-}
-
-// Llamar a actualizarTotalPago cuando se calcule el precio
-document.getElementById("calcularPrecioBtn").addEventListener("click", function () {
-  calcularPrecioYGuardar(); // Solo realiza el cálculo
-  actualizarTotalPago();    // Actualiza el total en la vista
-});
-
-
-
-
-
-
-
 
 
 
@@ -370,11 +234,11 @@ document.getElementById("calcularPrecioBtn").addEventListener("click", function 
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Función para generar la vista previa del documento
   function generarVistaPrevia() {
     const documentoPreview = document.getElementById("documentoPreview");
     if (!documentoPreview) return;
-    // Obtener los datos del formulario
+
+    // Obtener datos del formulario
     const fechaMatriculacion = document.getElementById("fechaMatriculacion")?.value || "No especificado";
     const marca = document.getElementById("marca")?.value || "No especificado";
     const modelo = document.getElementById("modelo")?.value || "No especificado";
@@ -382,16 +246,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const combustible = document.getElementById("combustible")?.value || "No especificado";
     const correo = document.getElementById("correo")?.value || "No especificado";
     const precioContrato = document.getElementById("precioContrato")?.value || "No especificado";
-    // Obtener los valores de la sección de pago
+    
+    // Sección de pago
     const nombreApellidos = document.getElementById("nombreApellidos")?.value.trim() || "No especificado";
     const telefono = document.getElementById("telefono")?.value.trim() || "No especificado";
-   
     const tasasDGT = document.getElementById("tasasDGT")?.textContent || "0 €";
     const gestion = document.getElementById("gestion")?.textContent || "0 €";
     const iva = document.getElementById("iva")?.textContent || "0 €";
     const impuesto = document.getElementById("impuesto")?.textContent || "0 €";
     const total = document.getElementById("total")?.textContent || "0 €";
-    // Crear el contenido del documento
+
+    // Crear contenido
     const contenido = `
       <h3>Documento de Trámite</h3>
       <p><strong>Fecha de Matriculación:</strong> ${fechaMatriculacion}</p>
@@ -399,14 +264,12 @@ document.addEventListener("DOMContentLoaded", () => {
       <p><strong>Modelo:</strong> ${modelo}</p>
       <p><strong>Comunidad Autónoma del Comprador:</strong> ${comunidadAutonoma}</p>
       <p><strong>Combustible:</strong> ${combustible}</p>
-
       <p><strong>Precio de Compraventa:</strong> ${precioContrato} €</p>
       <hr>
       <h4>Datos de Usuario</h4>
       <p><strong>Nombre y Apellidos:</strong> ${nombreApellidos}</p>
       <p><strong>Teléfono:</strong> ${telefono}</p>
-       <p><strong>Correo:</strong> ${correo}</p>
-
+      <p><strong>Correo:</strong> ${correo}</p>
       <hr>
       <h4>Detalles del Cálculo</h4>
       <p><strong>Tasas DGT:</strong> ${tasasDGT}</p>
@@ -417,24 +280,19 @@ document.addEventListener("DOMContentLoaded", () => {
       <hr>
       <p><strong>Envío a domicilio:</strong> Gratuito</p>
     `;
-    // Mostrar el contenido en el modal
+
+    // Insertar contenido y mostrar modal
     documentoPreview.innerHTML = contenido;
     document.getElementById("modalDocumento").style.display = "block";
   }
 
-  // Función para cerrar el modal de vista previa
   function cerrarModalDocumento() {
-    const modal = document.getElementById("modalDocumento");
-    if (modal) {
-      modal.style.display = "none";
-    }
+    document.getElementById("modalDocumento").style.display = "none";
   }
 
-  // Función para cerrar el modal al hacer clic fuera o presionar "Esc"
   function cerrarModalFuera(event) {
-    const modal = document.getElementById("modalDocumento");
-    if (event.target === modal) {
-      modal.style.display = "none";
+    if (event.target === document.getElementById("modalDocumento")) {
+      cerrarModalDocumento();
     }
   }
 
@@ -444,162 +302,76 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Función para descargar el documento en PDF con mejor formato
   function descargarPDF() {
+    console.log("Función descargarPDF ejecutada");
+
+    if (!window.jspdf) {
+      console.error("La biblioteca jsPDF no está cargada.");
+      return;
+    }
+
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // Agregar el logo en la parte superior
+    // Cargar imagen antes de generar el PDF
     const logoImg = new Image();
-    logoImg.src = "logo.png"; // Ruta relativa o absoluta del logo
+    logoImg.src = "logo.png"; // Ruta de la imagen
 
-    // Esperar a que la imagen cargue antes de agregarla al PDF
-    logoImg.onload = () => {
-      // Agregar el logo en la posición deseada
+    logoImg.onload = function () {
+      console.log("Logo cargado correctamente.");
       doc.addImage(logoImg, "PNG", 10, 10, 50, 20); // x, y, ancho, alto
 
       // Agregar título
       doc.setFont("helvetica", "bold");
       doc.setFontSize(16);
-      doc.text("Documento de Trámite", 10, 40); // Ajustar la posición después del logo
+      doc.text("Documento de Trámite", 10, 40);
 
-      // Obtener el contenido del documento sin etiquetas HTML
-      const documentoTexto = document.getElementById("documentoPreview").innerText.trim();
+      // Obtener contenido
+      const documentoTexto = document.getElementById("documentoPreview").textContent.trim();
+      console.log("Contenido del modal:", documentoTexto);
 
-      // Definir ancho de texto y margen
+      // Formato de texto
       const marginLeft = 10;
-      const marginTop = 50; // Ajustar margen superior después del logo
-      const maxWidth = 180; // Evita que el texto se corte
+      const marginTop = 50;
+      const maxWidth = 180;
       const lineHeight = 7;
 
-      // Agregar contenido con ajuste automático
       doc.setFont("helvetica", "normal");
       doc.setFontSize(12);
       const lines = doc.splitTextToSize(documentoTexto, maxWidth);
       doc.text(lines, marginLeft, marginTop + lineHeight);
 
-      // Guardar como archivo PDF
+      // Guardar PDF
+      console.log("Guardando PDF...");
       doc.save("documento_tramite.pdf");
     };
 
-    // Manejar errores si la imagen no se carga correctamente
-    logoImg.onerror = () => {
-      console.error("Error al cargar el logo.");
+    logoImg.onerror = function () {
+      console.error("Error al cargar el logo. Generando PDF sin logo.");
+
+      // Generar PDF sin logo
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(16);
+      doc.text("Documento de Trámite", 10, 20);
+
+      const documentoTexto = document.getElementById("documentoPreview").textContent.trim();
+      const marginLeft = 10;
+      const marginTop = 30;
+      const maxWidth = 180;
+      const lineHeight = 7;
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+      const lines = doc.splitTextToSize(documentoTexto, maxWidth);
+      doc.text(lines, marginLeft, marginTop + lineHeight);
+
+      doc.save("documento_tramite.pdf");
     };
   }
 
-  // Asociar eventos a botones
   document.getElementById("verResumenBtn")?.addEventListener("click", generarVistaPrevia);
   document.getElementById("cerrarModalDocumentoBtn")?.addEventListener("click", cerrarModalDocumento);
   document.getElementById("descargarPDFBtn")?.addEventListener("click", descargarPDF);
   document.getElementById("modalDocumento")?.addEventListener("click", cerrarModalFuera);
   document.addEventListener("keydown", cerrarModalConEsc);
 });
-
-
-
-
-
-
-
-import { getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-storage.js";
-        
-        const storage = getStorage();
-        const inputFile = document.getElementById("fileInput");
-        const dropArea = document.getElementById("dropArea");
-        const fileList = document.getElementById("fileList");
-        const progressContainer = document.getElementById("progressContainer");
-        const progressBar = document.getElementById("progressBar");
-        const progressText = document.getElementById("progressText");
-
-        const allowedFormats = ["image/jpeg", "image/png", "application/pdf"];
-        const maxFileSize = 5 * 1024 * 1024; 
-
-        dropArea.addEventListener("dragover", (event) => {
-            event.preventDefault();
-            dropArea.classList.add("dragging");
-        });
-
-        dropArea.addEventListener("dragleave", () => {
-            dropArea.classList.remove("dragging");
-        });
-
-        dropArea.addEventListener("drop", (event) => {
-            event.preventDefault();
-            dropArea.classList.remove("dragging");
-            handleFiles(event.dataTransfer.files);
-        });
-
-        inputFile.addEventListener("change", () => {
-            handleFiles(inputFile.files);
-        });
-
-        function handleFiles(files) {
-            for (let file of files) {
-                if (!allowedFormats.includes(file.type)) {
-                    alert("Formato no permitido. Solo JPG, PNG y PDF");
-                    continue;
-                }
-                if (file.size > maxFileSize) {
-                    alert("El archivo supera el límite de 5MB");
-                    continue;
-                }
-                uploadFile(file);
-            }
-        }
-
-        function uploadFile(file) {
-            const storageRef = ref(storage, `documentos/${file.name}`);
-            const uploadTask = uploadBytesResumable(storageRef, file);
-
-            progressContainer.style.display = "block";
-            progressText.innerText = `Subiendo ${file.name}...`;
-
-            uploadTask.on("state_changed",
-                (snapshot) => {
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    progressBar.style.width = progress + "%";
-                    progressText.innerText = `Subiendo ${file.name}: ${Math.round(progress)}%`;
-                },
-                (error) => {
-                    alert("Error al subir archivo: " + error.message);
-                    progressContainer.style.display = "none";
-                },
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        progressText.innerText = "Subida completa";
-                        setTimeout(() => {
-                            progressContainer.style.display = "none";
-                        }, 1000);
-                        displayFile(file.name, downloadURL);
-                    });
-                }
-            );
-        }
-
-        function displayFile(name, url) {
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="${url}" target="_blank">${name}</a> <button onclick="removeFile('${name}', '${url}')">Eliminar</button>`;
-            fileList.appendChild(li);
-        }
-
-        function removeFile(fileName, fileUrl) {
-            const storageRef = ref(storage, `documentos/${fileName}`);
-            deleteObject(storageRef).then(() => {
-                alert("Archivo eliminado correctamente");
-                removeFileFromList(fileUrl);
-            }).catch((error) => {
-                alert("Error al eliminar archivo: " + error.message);
-            });
-        }
-
-        function removeFileFromList(url) {
-            const items = fileList.getElementsByTagName("li");
-            for (let item of items) {
-                if (item.querySelector("a").href === url) {
-                    fileList.removeChild(item);
-                    break;
-                }
-            }
-        }
-        
